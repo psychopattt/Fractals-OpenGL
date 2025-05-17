@@ -1,0 +1,3 @@
+[submodule "Fractals/Fractals/OCSFW"]
+	path = Fractals/Fractals/OCSFW
+	url = https://github.com/psychopattt/OCSFW
