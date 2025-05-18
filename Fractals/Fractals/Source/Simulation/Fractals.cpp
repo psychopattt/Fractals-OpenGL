@@ -18,7 +18,7 @@ void Fractals::Initialize(int width, int height, unsigned int seed)
 	simDrawer = make_unique<SimulationDrawer>();
 	texture = make_unique<Texture>(width, height);
 
-	mandelbrotShader = make_unique<ComputeShader>("Mandelbrot", width, height);
+	mandelbrotShader = make_unique<ComputeShader>("MandelbrotFast", width, height);
 	mandelbrotShader->SetTextureBinding("dataTexture", texture->GetId());
 	mandelbrotShader->SetUniform("size", width, height);
 }

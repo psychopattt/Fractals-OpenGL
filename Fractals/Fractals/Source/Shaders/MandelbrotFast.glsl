@@ -37,11 +37,11 @@ int ComputeMandelbrot(dvec2 fractalPosition)
     return i;
 }
 
-vec4 ComputeColor(double i)
+vec4 ComputeColor(float i)
 {
-    double r = 9 * (1 - i) * i * i * i;
-    double g = 15 * (1 - i) * (1 - i) * i * i;
-    double b = 8.5 * (1 - i) * (1 - i) * (1 - i) * i;
+    float r = 9 * (1 - i) * i * i * i;
+    float g = 15 * (1 - i) * (1 - i) * i * i;
+    float b = 8.5 * (1 - i) * (1 - i) * (1 - i) * i;
     return vec4(r, g, b, 1);
 }
 
@@ -55,6 +55,6 @@ void main()
     dvec2 fractalPosition = GetFractalPosition(position);
     int iterations = ComputeMandelbrot(fractalPosition);
 
-    double normalizedIterations = iterations / double(maxIterations);
+    float normalizedIterations = iterations / float(maxIterations);
     imageStore(dataTexture, position, ComputeColor(normalizedIterations));
 }
