@@ -94,6 +94,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Simulation\MandelbrotDetailed\MandelbrotDetailed.cpp" />
+    <ClCompile Include="Source\Simulation\MandelbrotFast\MandelbrotFast.cpp" />
+    <ClCompile Include="Source\Simulation\FractalSimulationSwitch\FractalSimulationSwitch.cpp" />
     <ClCompile Include="OCSFW\Libraries\include\glad\gl.c" />
     <ClCompile Include="OCSFW\Libraries\include\imgui\imgui.cpp" />
     <ClCompile Include="OCSFW\Libraries\include\imgui\imgui_demo.cpp" />
@@ -133,9 +136,12 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Menus\FractalsMenu.cpp" />
     <ClCompile Include="Source\Shaders\PackedShaders.cpp" />
-    <ClCompile Include="Source\Simulation\Fractals.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Simulation\MandelbrotDetailed\MandelbrotDetailed.h" />
+    <ClInclude Include="Source\Simulation\MandelbrotFast\MandelbrotFast.h" />
+    <ClInclude Include="Source\Settings\FractalType.h" />
+    <ClInclude Include="Source\Simulation\FractalSimulationSwitch\FractalSimulationSwitch.h" />
     <ClInclude Include="OCSFW\Libraries\include\glad\gl.h" />
     <ClInclude Include="OCSFW\Libraries\include\GLFW\glfw3.h" />
     <ClInclude Include="OCSFW\Libraries\include\GLFW\glfw3native.h" />
@@ -183,7 +189,6 @@
     <ClInclude Include="OCSFW\Source\Simulation\SimulationMath\SimulationMath.h" />
     <ClInclude Include="Source\Menus\FractalsMenu.h" />
     <ClInclude Include="Source\Settings\FractalSettings.h" />
-    <ClInclude Include="Source\Simulation\Fractals.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="OCSFW\Libraries\lib\glfw3.lib" />

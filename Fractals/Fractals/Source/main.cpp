@@ -1,5 +1,5 @@
+#include "Simulation/FractalSimulationSwitch/FractalSimulationSwitch.h"
 #include "Settings/TransformSettings.h"
-#include "Simulation/Fractals.h"
 #include "Menus/FractalsMenu.h"
 #include "OCSFW.h"
 
@@ -7,7 +7,7 @@ int main()
 {
 	TransformSettings::MaxUiZoom = 16000;
 	TransformSettings::ApplyTransforms = false;
-	Fractals simulation = Fractals(1024, 1024);
+	FractalSimulationSwitch simulation = FractalSimulationSwitch(1024, 1024);
 
 	FractalsMenu fractalsMenu = FractalsMenu();
 	ImGuiWindow* menus[] = { &fractalsMenu };

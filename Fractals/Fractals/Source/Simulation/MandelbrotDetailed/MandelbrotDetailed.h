@@ -6,17 +6,19 @@
 
 using std::unique_ptr;
 
-class Fractals : public Simulation
+class MandelbrotDetailed : public Simulation
 {
 	public:
-		Fractals(int width, int height, unsigned int seed = 0);
+		MandelbrotDetailed(int width, int height, unsigned int seed = 0);
 		void Initialize(int width, int height, unsigned int seed = 0) override;
 		void Restart() override;
 		void Execute() override;
 		void Draw() override;
-		~Fractals();
 
 	private:
+		void ComputeComplexExp(float& real, float& image);
+		void ComputeLightDirection(float& x, float& y);
+
 		unique_ptr<class Texture> texture;
 		unique_ptr<class SimulationDrawer> simDrawer;
 		unique_ptr<class ComputeShader> mandelbrotShader;

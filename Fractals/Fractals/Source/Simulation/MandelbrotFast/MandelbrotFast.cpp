@@ -1,4 +1,4 @@
-#include "Fractals.h"
+#include "MandelbrotFast.h"
 
 #include "Settings/FractalSettings.h"
 #include "Settings/TransformSettings.h"
@@ -6,15 +6,15 @@
 #include "Shaders/ComputeShader/ComputeShader.h"
 #include "Simulation/SimulationDrawer/SimulationDrawer.h"
 
-Fractals::Fractals(int width, int height, unsigned int seed) :
+MandelbrotFast::MandelbrotFast(int width, int height, unsigned int seed) :
 	Simulation(width, height, seed) { };
 
-void Fractals::Initialize(int width, int height, unsigned int seed)
+void MandelbrotFast::Initialize(int width, int height, unsigned int seed)
 {
 	using std::make_unique;
 
 	Simulation::Initialize(width, height, seed);
-	
+
 	simDrawer = make_unique<SimulationDrawer>();
 	texture = make_unique<Texture>(width, height);
 
@@ -23,12 +23,12 @@ void Fractals::Initialize(int width, int height, unsigned int seed)
 	mandelbrotShader->SetUniform("size", width, height);
 }
 
-void Fractals::Restart()
+void MandelbrotFast::Restart()
 {
 	texture->Clear();
 }
 
-void Fractals::Execute()
+void MandelbrotFast::Execute()
 {
 	mandelbrotShader->SetUniform("maxIterations", FractalSettings::MaxIterations);
 	mandelbrotShader->SetUniform("scale", TransformSettings::ComputedScaleX, TransformSettings::ComputedScaleY);
@@ -36,9 +36,7 @@ void Fractals::Execute()
 	mandelbrotShader->Execute();
 }
 
-void Fractals::Draw()
+void MandelbrotFast::Draw()
 {
 	simDrawer->Draw(texture.get());
 }
-
-Fractals::~Fractals() { }
