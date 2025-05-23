@@ -94,6 +94,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Menus\MandelbrotDetailedMenu\MandelbrotDetailedMenu.cpp" />
+    <ClCompile Include="Source\Menus\MandelbrotFastMenu\MandelbrotFastMenu.cpp" />
+    <ClCompile Include="Source\Menus\FractalMenuSwitch\FractalMenuSwitch.cpp" />
     <ClCompile Include="Source\Simulation\MandelbrotDetailed\MandelbrotDetailed.cpp" />
     <ClCompile Include="Source\Simulation\MandelbrotFast\MandelbrotFast.cpp" />
     <ClCompile Include="Source\Simulation\FractalSimulationSwitch\FractalSimulationSwitch.cpp" />
@@ -134,10 +137,12 @@
     <ClCompile Include="OCSFW\Source\Simulation\SimulationDrawer\SimulationTransforms\SimulationTransforms.cpp" />
     <ClCompile Include="OCSFW\Source\Simulation\SimulationMath\SimulationMath.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Menus\FractalsMenu.cpp" />
     <ClCompile Include="Source\Shaders\PackedShaders.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Menus\MandelbrotDetailedMenu\MandelbrotDetailedMenu.h" />
+    <ClInclude Include="Source\Menus\MandelbrotFastMenu\MandelbrotFastMenu.h" />
+    <ClInclude Include="Source\Menus\FractalMenuSwitch\FractalMenuSwitch.h" />
     <ClInclude Include="Source\Simulation\MandelbrotDetailed\MandelbrotDetailed.h" />
     <ClInclude Include="Source\Simulation\MandelbrotFast\MandelbrotFast.h" />
     <ClInclude Include="Source\Settings\FractalType.h" />
@@ -187,7 +192,6 @@
     <ClInclude Include="OCSFW\Source\Simulation\SimulationDrawer\SimulationDrawer.h" />
     <ClInclude Include="OCSFW\Source\Simulation\SimulationDrawer\SimulationTransforms\SimulationTransforms.h" />
     <ClInclude Include="OCSFW\Source\Simulation\SimulationMath\SimulationMath.h" />
-    <ClInclude Include="Source\Menus\FractalsMenu.h" />
     <ClInclude Include="Source\Settings\FractalSettings.h" />
   </ItemGroup>
   <ItemGroup>

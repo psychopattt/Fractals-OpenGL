@@ -13,9 +13,8 @@ class FractalSimulationSwitch : public Simulation
 		void Execute() override;
 		void Draw() override;
 
-	private:
-		void SwitchActiveFractal(bool initialize = true);
+		void SwitchActiveFractal();
 
-		enum class FractalType activeFractalType = (FractalType)-1;
+	private:
 		std::unique_ptr<Simulation> activeFractal;
 };
