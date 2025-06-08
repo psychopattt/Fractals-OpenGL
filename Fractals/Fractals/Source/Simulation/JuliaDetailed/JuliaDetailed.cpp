@@ -1,0 +1,67 @@
+#include "JuliaDetailed.h"
+
+#include <numbers>
+
+#include "Settings/FractalSettings.h"
+#include "Settings/TransformSettings.h"
+#include "Shaders/Buffers/Texture/Texture.h"
+#include "Shaders/ComputeShader/ComputeShader.h"
+#include "Simulation/SimulationDrawer/SimulationDrawer.h"
+
+JuliaDetailed::JuliaDetailed(int width, int height, unsigned int seed) :
+	Simulation(width, height, seed) { };
+
+void JuliaDetailed::Initialize(int width, int height, unsigned int seed)
+{
+	using std::make_unique;
+
+	Simulation::Initialize(width, height, seed);
+
+	simDrawer = make_unique<SimulationDrawer>();
+	texture = make_unique<Texture>(width, height);
+
+	juliaShader = make_unique<ComputeShader>("JuliaDetailed", width, height);
+	juliaShader->SetTextureBinding("dataTexture", texture->GetId());
+	juliaShader->SetUniform("size", width, height);
+}
+
+void JuliaDetailed::Restart()
+{
+	texture->Clear();
+}
+
+void JuliaDetailed::ComputeComplexExp(float& real, float& image)
+{
+	float realExp = expf(real);
+	real = cosf(image) * realExp;
+	image = sinf(image) * realExp;
+}
+
+void JuliaDetailed::ComputeLightDirection(float& x, float& y)
+{
+	x = 0;
+	y = FractalSettings::LightAngle * 2 * std::numbers::pi_v<float> / 360;
+	ComputeComplexExp(x, y);
+}
+
+void JuliaDetailed::Execute()
+{
+	float lightDirectionX, lightDirectionY;
+	ComputeLightDirection(lightDirectionX, lightDirectionY);
+	juliaShader->SetUniform("lightDirection", lightDirectionX, lightDirectionY);
+
+	juliaShader->SetUniform("lightHeight", FractalSettings::LightHeight);
+	juliaShader->SetUniform("oddIterationsTint", FractalSettings::OddIterationsTint);
+	juliaShader->SetUniform("evenIterationsTint", FractalSettings::EvenIterationsTint);
+
+	juliaShader->SetUniform("maxIterations", FractalSettings::MaxIterations);
+	juliaShader->SetUniform("constant", FractalSettings::ConstantX, FractalSettings::ConstantY);
+	juliaShader->SetUniform("scale", TransformSettings::ComputedScaleX, TransformSettings::ComputedScaleY);
+	juliaShader->SetUniform("pan", TransformSettings::ComputedPanX, TransformSettings::ComputedPanY);
+	juliaShader->Execute();
+}
+
+void JuliaDetailed::Draw()
+{
+	simDrawer->Draw(texture.get());
+}

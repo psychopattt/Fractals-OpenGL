@@ -9,6 +9,8 @@
 #include "Simulation/FractalSimulationSwitch/FractalSimulationSwitch.h"
 #include "../MandelbrotDetailedMenu/MandelbrotDetailedMenu.h"
 #include "../MandelbrotFastMenu/MandelbrotFastMenu.h"
+#include "../JuliaDetailedMenu/JuliaDetailedMenu.h"
+#include "../JuliaFastMenu/JuliaFastMenu.h"
 
 using namespace ImGui;
 
@@ -23,6 +25,12 @@ void FractalMenuSwitch::SwitchActiveMenu()
 			break;
 		case FractalType::MandelbrotDetailed:
 			activeMenu = make_unique<MandelbrotDetailedMenu>();
+			break;
+		case FractalType::JuliaFast:
+			activeMenu = make_unique<JuliaFastMenu>();
+			break;
+		case FractalType::JuliaDetailed:
+			activeMenu = make_unique<JuliaDetailedMenu>();
 			break;
 	}
 

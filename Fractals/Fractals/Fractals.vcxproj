@@ -94,6 +94,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Menus\JuliaDetailedMenu\JuliaDetailedMenu.cpp" />
+    <ClCompile Include="Source\Simulation\JuliaDetailed\JuliaDetailed.cpp" />
+    <ClCompile Include="Source\Menus\JuliaFastMenu\JuliaFastMenu.cpp" />
+    <ClCompile Include="Source\Simulation\JuliaFast\JuliaFast.cpp" />
     <ClCompile Include="Source\Menus\MandelbrotDetailedMenu\MandelbrotDetailedMenu.cpp" />
     <ClCompile Include="Source\Menus\MandelbrotFastMenu\MandelbrotFastMenu.cpp" />
     <ClCompile Include="Source\Menus\FractalMenuSwitch\FractalMenuSwitch.cpp" />
@@ -140,6 +144,10 @@
     <ClCompile Include="Source\Shaders\PackedShaders.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Menus\JuliaDetailedMenu\JuliaDetailedMenu.h" />
+    <ClInclude Include="Source\Simulation\JuliaDetailed\JuliaDetailed.h" />
+    <ClInclude Include="Source\Menus\JuliaFastMenu\JuliaFastMenu.h" />
+    <ClInclude Include="Source\Simulation\JuliaFast\JuliaFast.h" />
     <ClInclude Include="Source\Menus\MandelbrotDetailedMenu\MandelbrotDetailedMenu.h" />
     <ClInclude Include="Source\Menus\MandelbrotFastMenu\MandelbrotFastMenu.h" />
     <ClInclude Include="Source\Menus\FractalMenuSwitch\FractalMenuSwitch.h" />

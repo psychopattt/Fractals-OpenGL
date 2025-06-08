@@ -4,6 +4,8 @@
 #include "Settings/FractalSettings.h"
 #include "../MandelbrotFast/MandelbrotFast.h"
 #include "../MandelbrotDetailed/MandelbrotDetailed.h"
+#include "../JuliaDetailed/JuliaDetailed.h"
+#include "../JuliaFast/JuliaFast.h"
 
 FractalSimulationSwitch::FractalSimulationSwitch(int width, int height, unsigned int seed) :
 	Simulation(width, height, seed) { };
@@ -19,6 +21,12 @@ void FractalSimulationSwitch::SwitchActiveFractal()
 			break;
 		case FractalType::MandelbrotDetailed:
 			activeFractal = make_unique<MandelbrotDetailed>(width, height, seed);
+			break;
+		case FractalType::JuliaFast:
+			activeFractal = make_unique<JuliaFast>(width, height, seed);
+			break;
+		case FractalType::JuliaDetailed:
+			activeFractal = make_unique<JuliaDetailed>(width, height, seed);
 			break;
 	}
 
