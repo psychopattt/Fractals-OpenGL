@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Interface/ImGui/ImGuiWindow/ImGuiWindow.h"
+#include "../MandelbrotFastMenu/MandelbrotFastMenu.h"
 
-class MandelbrotDetailedMenu : public ImGuiWindow
+class MandelbrotDetailedMenu : public MandelbrotFastMenu
 {
 	public:
 		void Render() override;

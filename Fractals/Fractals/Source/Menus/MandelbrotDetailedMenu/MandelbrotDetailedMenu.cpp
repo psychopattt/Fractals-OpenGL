@@ -8,8 +8,7 @@ using namespace ImGui;
 
 void MandelbrotDetailedMenu::Render()
 {
-	SeparatorText("Max Iterations");
-	DragScalar("##dragMaxIterations", ImGuiDataType_U32, &FractalSettings::MaxIterations, 0.5f);
+	MandelbrotFastMenu::Render();
 
 	SeparatorText("Odd Iterations Tint");
 	DragFloat("##dragOddIterationsTint", &FractalSettings::OddIterationsTint, 0.01f, -1, 100, "%.2f");
