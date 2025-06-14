@@ -1,12 +1,9 @@
 #pragma once
 
-#include "Interface/ImGui/ImGuiWindow/ImGuiWindow.h"
+#include "../JuliaFastMenu/JuliaFastMenu.h"
 
-class JuliaDetailedMenu : public ImGuiWindow
+class JuliaDetailedMenu : public JuliaFastMenu
 {
 	public:
 		void Render() override;
-
-	private:
-		void RenderConstantControls();
 };
