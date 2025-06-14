@@ -8,5 +8,9 @@ class JuliaFastMenu : public ImGuiWindow
 		void Render() override;
 	
 	private:
-		void RenderConstantControls();
+		void RenderConstantInputs();
+		int ComputeConstantDisplayedDecimals();
+		void RenderConstantButtons();
+		void RenderConstantCopyButton(float buttonWidth);
+		void RenderConstantPasteButton(float buttonWidth);
 };
