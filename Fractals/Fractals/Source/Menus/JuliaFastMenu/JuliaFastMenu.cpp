@@ -40,12 +40,12 @@ void JuliaFastMenu::RenderConstantInputs()
 
 int JuliaFastMenu::ComputeConstantDisplayedDecimals()
 {
-	float digitWidth = CalcTextSize("0").x;
+	float charWidth = CalcTextSize("0").x;
 	float numberWidth = (GetItemRectSize().x - GetStyle().ItemInnerSpacing.x) / 2;
 	int integerChars = 2 + (FractalSettings::ConstantX < 0 || FractalSettings::ConstantY < 0);
-	float decimalsWidth = std::max(0.0f, numberWidth - (integerChars * digitWidth));
+	float decimalsWidth = std::max(0.0f, numberWidth - (integerChars * charWidth));
 
-	return std::min(17, static_cast<int>(decimalsWidth / digitWidth));
+	return std::min(17, static_cast<int>(decimalsWidth / charWidth));
 }
 
 void JuliaFastMenu::RenderConstantButtons()
