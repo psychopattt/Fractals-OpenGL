@@ -9,6 +9,8 @@ namespace FractalSettings
 
 	// Mandelbrot (All) & Julia (All)
 	inline unsigned int MaxIterations = 256;
+	inline constexpr double MaxPosition = 4;
+	inline constexpr double MinPosition = -MaxPosition;
 
 	// Mandelbrot (Detailed) & Julia (Detailed)
 	inline float LightAngle = 45;
@@ -17,8 +19,6 @@ namespace FractalSettings
 	inline float EvenIterationsTint = 0;
 
 	// Julia (All)
-	inline constexpr double MaxConstant = 2;
-	inline constexpr double MinConstant = -MaxConstant;
 	inline double ConstantX = 0.285;
 	inline double ConstantY = 0.01;
 }

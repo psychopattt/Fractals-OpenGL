@@ -27,7 +27,7 @@ void JuliaFastMenu::RenderConstantInputs()
 
 	bool constantModified = DragScalarN(
 		"##dragConstant", ImGuiDataType_Double, constant, std::size(constant), 0.000001f,
-		&FractalSettings::MinConstant, &FractalSettings::MaxConstant, format.c_str(),
+		&FractalSettings::MinPosition, &FractalSettings::MaxPosition, format.c_str(),
 		ImGuiSliderFlags_NoRoundToFormat | ImGuiSliderFlags_AlwaysClamp
 	);
 	
