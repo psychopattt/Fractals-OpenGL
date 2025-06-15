@@ -76,7 +76,8 @@ void JuliaFastMenu::RenderConstantPasteButton(float buttonWidth)
 {
 	if (Button("Paste", ImVec2(buttonWidth, 0)))
 	{
-		std::string clipboard = GetClipboardText();
+		const char* clipboardChars = GetClipboardText();
+		std::string clipboard = clipboardChars != NULL ? clipboardChars : "";
 
 		try
 		{
