@@ -5,6 +5,8 @@
 #include "imgui/imgui.h"
 
 #include "Settings/FractalSettings.h"
+#include "Settings/TransformSettings.h"
+#include "Simulation/SimulationMath/SimulationMath.h"
 #include "Settings/LogString/LogString.h"
 #include "Settings/MainSettings.h"
 
@@ -22,11 +24,13 @@ void JuliaFastMenu::Render()
 void JuliaFastMenu::RenderConstantInputs()
 {
 	SeparatorText("Constant");
+
+	float dragSpeed = ComputeConstantDragSpeed();
 	double constant[] = { FractalSettings::ConstantX, FractalSettings::ConstantY };
 	std::string format = "%." + std::to_string(ComputeConstantDisplayedDecimals()) + "f";
 
 	bool constantModified = DragScalarN(
-		"##dragConstant", ImGuiDataType_Double, constant, std::size(constant), 0.000001f,
+		"##dragConstant", ImGuiDataType_Double, constant, std::size(constant), dragSpeed,
 		&FractalSettings::MinPosition, &FractalSettings::MaxPosition, format.c_str(),
 		ImGuiSliderFlags_NoRoundToFormat | ImGuiSliderFlags_AlwaysClamp
 	);
@@ -36,6 +40,14 @@ void JuliaFastMenu::RenderConstantInputs()
 		FractalSettings::ConstantX = constant[0];
 		FractalSettings::ConstantY = constant[1];
 	}
+}
+
+float JuliaFastMenu::ComputeConstantDragSpeed()
+{
+	double scaledZoom = SimulationMath::ScaleZoom(TransformSettings::Zoom);
+	double dragSpeedAtZoom = 0.000006 / scaledZoom;
+
+	return static_cast<float>(dragSpeedAtZoom);
 }
 
 int JuliaFastMenu::ComputeConstantDisplayedDecimals()

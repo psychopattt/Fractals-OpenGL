@@ -9,6 +9,7 @@ class JuliaFastMenu : public ImGuiWindow
 	
 	private:
 		void RenderConstantInputs();
+		float ComputeConstantDragSpeed();
 		int ComputeConstantDisplayedDecimals();
 		void RenderConstantButtons();
 		void RenderConstantCopyButton(float buttonWidth);
