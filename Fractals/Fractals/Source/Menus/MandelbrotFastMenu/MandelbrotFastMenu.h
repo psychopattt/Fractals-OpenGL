@@ -9,6 +9,7 @@ class MandelbrotFastMenu : public ImGuiWindow
 
 	private:
 		void RenderPositionInputs();
+		float ComputePositionDragSpeed();
 		int ComputePositionDisplayedDecimals(double positionX, double positionY);
 		void RenderPositionButtons();
 		void RenderPositionCopyButton(float buttonWidth);

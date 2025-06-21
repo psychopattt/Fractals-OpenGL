@@ -6,6 +6,7 @@
 
 #include "Settings/FractalSettings.h"
 #include "Settings/TransformSettings.h"
+#include "Simulation/SimulationMath/SimulationMath.h"
 #include "Settings/LogString/LogString.h"
 #include "Settings/MainSettings.h"
 
@@ -27,17 +28,26 @@ void MandelbrotFastMenu::RenderPositionInputs()
 	double position[2] = { };
 	ComputeFractalPosition(position[0], position[1]);
 
+	float dragSpeed = ComputePositionDragSpeed();
 	int displayedDecimals = ComputePositionDisplayedDecimals(position[0], position[1]);
 	std::string format = "%." + std::to_string(displayedDecimals) + "f";
 
 	bool positionModified = DragScalarN(
-		"##dragPosition", ImGuiDataType_Double, position, std::size(position), 0.000001f,
+		"##dragPosition", ImGuiDataType_Double, position, std::size(position), dragSpeed,
 		&FractalSettings::MinPosition, &FractalSettings::MaxPosition, format.c_str(),
 		ImGuiSliderFlags_NoRoundToFormat | ImGuiSliderFlags_AlwaysClamp | ImGuiSliderFlags_WrapAround
 	);
 
 	if (positionModified)
 		UpdateSimulationPosition(position[0], position[1]);
+}
+
+float MandelbrotFastMenu::ComputePositionDragSpeed()
+{
+	double scaledZoom = SimulationMath::ScaleZoom(TransformSettings::Zoom);
+	double dragSpeedAtZoom = 0.003 / scaledZoom;
+
+	return static_cast<float>(dragSpeedAtZoom);
 }
 
 int MandelbrotFastMenu::ComputePositionDisplayedDecimals(double positionX, double positionY)
