@@ -21,4 +21,13 @@ namespace FractalSettings
 	// Julia (All)
 	inline double ConstantX = 0.285;
 	inline double ConstantY = 0.01;
+
+	// Sierpinski Triangle
+	inline unsigned int MaxDepth = 5;
+	inline constexpr unsigned int DepthStep = 1;
+	inline constexpr unsigned int DepthStepFast = 3;
+	inline double GradientRepetition = 1;
+	inline float GradientBrightness = 1;
+	inline bool GradientInvert = false;
+	inline bool GradientAxis = true;
 }
