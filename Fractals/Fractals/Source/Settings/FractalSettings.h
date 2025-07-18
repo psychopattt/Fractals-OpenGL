@@ -22,12 +22,14 @@ namespace FractalSettings
 	inline double ConstantX = 0.285;
 	inline double ConstantY = 0.01;
 
-	// Sierpinski Triangle
+	// Sierpinski Triangle & Sierpinski Carpet
 	inline unsigned int MaxDepth = 5;
 	inline constexpr unsigned int DepthStep = 1;
 	inline constexpr unsigned int DepthStepFast = 3;
 	inline double GradientRepetition = 1;
 	inline float GradientBrightness = 1;
 	inline bool GradientInvert = false;
+
+	// Sierpinski Triangle
 	inline bool GradientAxis = true;
 }

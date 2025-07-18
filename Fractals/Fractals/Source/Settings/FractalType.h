@@ -6,7 +6,8 @@ enum class FractalType
 	MandelbrotDetailed = 1,
 	JuliaFast = 2,
 	JuliaDetailed = 3,
-	SierpinskiTriangle = 4
+	SierpinskiCarpet = 4,
+	SierpinskiTriangle = 5
 };
 
 constexpr char FractalTypeLabels[] =
@@ -14,4 +15,5 @@ constexpr char FractalTypeLabels[] =
 	"Mandelbrot (Detailed)\0"
 	"Julia (Fast)\0"
 	"Julia (Detailed)\0"
+	"Sierpinski Carpet\0"
 	"Sierpinski Triangle\0\0";

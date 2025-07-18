@@ -94,6 +94,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Menus\SierpinskiCarpetMenu\SierpinskiCarpetMenu.cpp" />
+    <ClCompile Include="Source\Simulation\SierpinskiCarpet\SierpinskiCarpet.cpp" />
     <ClCompile Include="Source\Menus\SierpinskiTriangleMenu\SierpinskiTriangleMenu.cpp" />
     <ClCompile Include="Source\Simulation\SierpinskiTriangle\SierpinskiTriangle.cpp" />
     <ClCompile Include="Source\Menus\JuliaDetailedMenu\JuliaDetailedMenu.cpp" />
@@ -146,6 +148,8 @@
     <ClCompile Include="Source\Shaders\PackedShaders.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Menus\SierpinskiCarpetMenu\SierpinskiCarpetMenu.h" />
+    <ClInclude Include="Source\Simulation\SierpinskiCarpet\SierpinskiCarpet.h" />
     <ClInclude Include="Source\Menus\SierpinskiTriangleMenu\SierpinskiTriangleMenu.h" />
     <ClInclude Include="Source\Simulation\SierpinskiTriangle\SierpinskiTriangle.h" />
     <ClInclude Include="Source\Menus\JuliaDetailedMenu\JuliaDetailedMenu.h" />

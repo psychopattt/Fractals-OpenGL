@@ -6,6 +6,7 @@
 #include "../MandelbrotDetailed/MandelbrotDetailed.h"
 #include "../JuliaDetailed/JuliaDetailed.h"
 #include "../JuliaFast/JuliaFast.h"
+#include "../SierpinskiCarpet/SierpinskiCarpet.h"
 #include "../SierpinskiTriangle/SierpinskiTriangle.h"
 
 FractalSimulationSwitch::FractalSimulationSwitch(int width, int height, unsigned int seed) :
@@ -28,6 +29,9 @@ void FractalSimulationSwitch::SwitchActiveFractal()
 			break;
 		case FractalType::JuliaDetailed:
 			activeFractal = make_unique<JuliaDetailed>(width, height, seed);
+			break;
+		case FractalType::SierpinskiCarpet:
+			activeFractal = make_unique<SierpinskiCarpet>(width, height, seed);
 			break;
 		case FractalType::SierpinskiTriangle:
 			activeFractal = make_unique<SierpinskiTriangle>(width, height, seed);

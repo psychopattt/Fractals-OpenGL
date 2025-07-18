@@ -11,6 +11,7 @@
 #include "../MandelbrotFastMenu/MandelbrotFastMenu.h"
 #include "../JuliaDetailedMenu/JuliaDetailedMenu.h"
 #include "../JuliaFastMenu/JuliaFastMenu.h"
+#include "../SierpinskiCarpetMenu/SierpinskiCarpetMenu.h"
 #include "../SierpinskiTriangleMenu/SierpinskiTriangleMenu.h"
 
 using namespace ImGui;
@@ -32,6 +33,9 @@ void FractalMenuSwitch::SwitchActiveMenu()
 			break;
 		case FractalType::JuliaDetailed:
 			activeMenu = make_unique<JuliaDetailedMenu>();
+			break;
+		case FractalType::SierpinskiCarpet:
+			activeMenu = make_unique<SierpinskiCarpetMenu>();
 			break;
 		case FractalType::SierpinskiTriangle:
 			activeMenu = make_unique<SierpinskiTriangleMenu>();
