@@ -8,6 +8,7 @@
 #include "../JuliaFast/JuliaFast.h"
 #include "../SierpinskiCarpet/SierpinskiCarpet.h"
 #include "../SierpinskiTriangle/SierpinskiTriangle.h"
+#include "../NewtonFractal/NewtonFractal.h"
 
 FractalSimulationSwitch::FractalSimulationSwitch(int width, int height, unsigned int seed) :
 	Simulation(width, height, seed) { };
@@ -35,6 +36,9 @@ void FractalSimulationSwitch::SwitchActiveFractal()
 			break;
 		case FractalType::SierpinskiTriangle:
 			activeFractal = make_unique<SierpinskiTriangle>(width, height, seed);
+			break;
+		case FractalType::NewtonFractal:
+			activeFractal = make_unique<NewtonFractal>(width, height, seed);
 			break;
 	}
 

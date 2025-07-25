@@ -32,4 +32,10 @@ namespace FractalSettings
 
 	// Sierpinski Triangle
 	inline bool GradientAxis = true;
+
+	// Newton Fractal
+	inline unsigned int Roots = 3;
+	inline unsigned int NewtonMaxIterations = 20;
+	inline unsigned int ColorCount = 3;
+	inline float ColorShift = 0;
 }

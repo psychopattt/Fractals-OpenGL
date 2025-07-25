@@ -13,6 +13,7 @@
 #include "../JuliaFastMenu/JuliaFastMenu.h"
 #include "../SierpinskiCarpetMenu/SierpinskiCarpetMenu.h"
 #include "../SierpinskiTriangleMenu/SierpinskiTriangleMenu.h"
+#include "../NewtonFractalMenu/NewtonFractalMenu.h"
 
 using namespace ImGui;
 
@@ -39,6 +40,9 @@ void FractalMenuSwitch::SwitchActiveMenu()
 			break;
 		case FractalType::SierpinskiTriangle:
 			activeMenu = make_unique<SierpinskiTriangleMenu>();
+			break;
+		case FractalType::NewtonFractal:
+			activeMenu = make_unique<NewtonFractalMenu>();
 			break;
 	}
 
