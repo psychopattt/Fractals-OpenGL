@@ -8,7 +8,8 @@ enum class FractalType
 	JuliaDetailed = 3,
 	SierpinskiCarpet = 4,
 	SierpinskiTriangle = 5,
-	NewtonFractal = 6
+	NewtonFractal = 6,
+	PythagorasTree = 7
 };
 
 constexpr char FractalTypeLabels[] =
@@ -18,4 +19,5 @@ constexpr char FractalTypeLabels[] =
 	"Julia (Detailed)\0"
 	"Sierpinski Carpet\0"
 	"Sierpinski Triangle\0"
-	"Newton Fractal\0\0";
+	"Newton Fractal\0"
+	"Pythagoras Tree\0\0";

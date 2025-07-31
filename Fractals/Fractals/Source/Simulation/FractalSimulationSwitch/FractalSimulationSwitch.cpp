@@ -9,6 +9,7 @@
 #include "../SierpinskiCarpet/SierpinskiCarpet.h"
 #include "../SierpinskiTriangle/SierpinskiTriangle.h"
 #include "../NewtonFractal/NewtonFractal.h"
+#include "../PythagorasTree/PythagorasTree.h"
 
 FractalSimulationSwitch::FractalSimulationSwitch(int width, int height, unsigned int seed) :
 	Simulation(width, height, seed) { };
@@ -39,6 +40,9 @@ void FractalSimulationSwitch::SwitchActiveFractal()
 			break;
 		case FractalType::NewtonFractal:
 			activeFractal = make_unique<NewtonFractal>(width, height, seed);
+			break;
+		case FractalType::PythagorasTree:
+			activeFractal = make_unique<PythagorasTree>(width, height, seed);
 			break;
 	}
 

@@ -94,6 +94,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Menus\PythagorasTreeMenu\PythagorasTreeMenu.cpp" />
+    <ClCompile Include="Source\Simulation\PythagorasTree\PythagorasTree.cpp" />
     <ClCompile Include="Source\Menus\NewtonFractalMenu\NewtonFractalMenu.cpp" />
     <ClCompile Include="Source\Simulation\NewtonFractal\NewtonFractal.cpp" />
     <ClCompile Include="Source\Menus\SierpinskiCarpetMenu\SierpinskiCarpetMenu.cpp" />
@@ -150,6 +152,8 @@
     <ClCompile Include="Source\Shaders\PackedShaders.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Menus\PythagorasTreeMenu\PythagorasTreeMenu.h" />
+    <ClInclude Include="Source\Simulation\PythagorasTree\PythagorasTree.h" />
     <ClInclude Include="Source\Menus\NewtonFractalMenu\NewtonFractalMenu.h" />
     <ClInclude Include="Source\Simulation\NewtonFractal\NewtonFractal.h" />
     <ClInclude Include="Source\Menus\SierpinskiCarpetMenu\SierpinskiCarpetMenu.h" />

@@ -38,4 +38,10 @@ namespace FractalSettings
 	inline unsigned int NewtonMaxIterations = 20;
 	inline unsigned int ColorCount = 3;
 	inline float ColorShift = 0;
+
+	// Pythagoras Tree
+	inline unsigned int TreeOrder = 8;
+	inline bool MergeBranches = false;
+	inline float TrunkColor[3] = { 0.325f, 0.208f, 0.039f };
+	inline float LeavesColor[3] = { 0, 0.38f, 0.055f };
 }

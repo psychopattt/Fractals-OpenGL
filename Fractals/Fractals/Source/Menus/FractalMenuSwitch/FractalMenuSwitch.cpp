@@ -14,6 +14,7 @@
 #include "../SierpinskiCarpetMenu/SierpinskiCarpetMenu.h"
 #include "../SierpinskiTriangleMenu/SierpinskiTriangleMenu.h"
 #include "../NewtonFractalMenu/NewtonFractalMenu.h"
+#include "../PythagorasTreeMenu/PythagorasTreeMenu.h"
 
 using namespace ImGui;
 
@@ -43,6 +44,9 @@ void FractalMenuSwitch::SwitchActiveMenu()
 			break;
 		case FractalType::NewtonFractal:
 			activeMenu = make_unique<NewtonFractalMenu>();
+			break;
+		case FractalType::PythagorasTree:
+			activeMenu = make_unique<PythagorasTreeMenu>();
 			break;
 	}
 
