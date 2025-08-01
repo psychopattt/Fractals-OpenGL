@@ -19,6 +19,20 @@ Fractals generator using [OCSFW](https://github.com/psychopattt/OCSFW) (GLFW, Op
     - Constant
     - Odd and even iterations tint
     - Light height and angle
+  - Sierpinski Carpet
+    - Depth
+    - Gradient location, brightness and repetition
+  - Sierpinski Triangle
+    - Depth
+    - Gradient location, brightness and repetition
+  - Newton Fractal
+    - Number of roots
+    - Maximum iterations
+    - Number of colors and color shift
+  - Pythagoras Tree
+    - Order
+    - Appearance
+    - Trunk and leaves colors
 - All features of [OCSFW](https://github.com/psychopattt/OCSFW?tab=readme-ov-file#features)
 
 ## Requirements
