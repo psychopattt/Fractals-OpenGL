@@ -15,7 +15,7 @@ const double squareSize = 0.05;
 const dvec2 squareOffset = dvec2(squareSize, squareSize * 2);
 const dvec2 treeCenter = dvec2(0, squareSize * 3);
 
-layout(rgba32f) restrict uniform image2D dataTexture;
+restrict writeonly uniform image2D dataTexture;
 
 dvec2 GetFractalPosition(ivec2 position)
 {

@@ -7,7 +7,7 @@ uniform dvec2 scale;
 uniform dvec2 pan;
 uniform uint maxIterations;
 
-layout(rgba32f) restrict uniform image2D dataTexture;
+restrict writeonly uniform image2D dataTexture;
 
 dvec2 GetFractalPosition(ivec2 position)
 {

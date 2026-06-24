@@ -14,7 +14,7 @@ uniform float colorShift;
 const float tau = 6.283185307;
 const double threshold = 0.00000000001;
 
-layout(rgba32f) restrict uniform image2D dataTexture;
+restrict writeonly uniform image2D dataTexture;
 
 dvec2 GetFractalPosition(ivec2 position)
 {

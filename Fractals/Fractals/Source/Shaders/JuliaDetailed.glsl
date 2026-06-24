@@ -13,7 +13,7 @@ uniform float evenIterationsTint;
 uniform uint maxIterations;
 uniform dvec2 constant;
 
-layout(rgba32f) restrict uniform image2D dataTexture;
+restrict writeonly uniform image2D dataTexture;
 
 dvec2 GetFractalPosition(ivec2 position)
 {

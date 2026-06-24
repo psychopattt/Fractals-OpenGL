@@ -12,7 +12,7 @@ uniform bool gradientInvert;
 uniform float gradientBrightness;
 uniform double gradientRepetition;
 
-layout(rgba32f) restrict uniform image2D dataTexture;
+restrict writeonly uniform image2D dataTexture;
 
 dvec2 GetFractalPosition(ivec2 position)
 {
