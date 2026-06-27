@@ -19,22 +19,19 @@ dvec2 GetFractalPosition(ivec2 position)
 
 int ComputeMandelbrot(dvec2 fractalPosition)
 {
-    int i = 0;
-    double x = 0;
-    double y = 0;
-    double x2 = 0;
-    double y2 = 0;
+    int iterations = 0;
+    dvec2 point1 = dvec2(0);
+    dvec2 point2 = dvec2(0);
 
-    while (x2 + y2 < 4 && i < maxIterations)
+    while (point2.x + point2.y < 4 && iterations < maxIterations)
     {
-        y = 2 * x * y + fractalPosition.y;
-        x = x2 - y2 + fractalPosition.x;
-        x2 = x * x;
-        y2 = y * y;
-        i++;
+        point1.y = 2 * point1.x * point1.y + fractalPosition.y;
+        point1.x = point2.x - point2.y + fractalPosition.x;
+        point2 = point1 * point1;
+        iterations++;
     }
 
-    return i;
+    return iterations;
 }
 
 vec4 ComputeColor(float i)
