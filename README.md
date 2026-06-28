@@ -1,5 +1,7 @@
 # Fractals
 Fractals generator using [OCSFW](https://github.com/psychopattt/OCSFW) (GLFW, OpenGL and Dear ImGui)
+<br>
+Demo video available [here](https://youtu.be/fLeyE90olBg)
 
 ## Features
 - Choose a fractal type and change its settings
